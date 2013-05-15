@@ -17,7 +17,6 @@
   <tr>
 <td height="50" valign="middle" bgcolor="#FFFFFF">
 <p>
-<form method="post">
 <c:choose>
 <c:when test="${id eq 1}"><input type="button" name="Submit" value="开始生成产品分类页" onClick="window.location.href='/static/html/productCategory' "/>
 </c:when>
@@ -27,7 +26,6 @@
 </c:when>
 </c:choose>
 
-</form>
 </p>
 </td>
   </tr>
