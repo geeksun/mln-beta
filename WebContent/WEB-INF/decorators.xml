@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<decorators defaultDir="/WEB-INF/layout">
+	<!-- 不加装饰的文件 -->
+    <excludes>
+        <pattern>/css/*</pattern>
+        <pattern>/js/*</pattern>
+        <pattern>/html/*</pattern>
+        <pattern>/images/*</pattern>
+        <pattern>/script/*</pattern>
+        <pattern>/template/*</pattern>
+        <pattern>/uploadfile/*</pattern>
+        <pattern>*.data</pattern>
+        <pattern>/buildImage.do</pattern>
+        <pattern>/buildImage.do?*</pattern>
+        <pattern>/admin*</pattern>
+        <pattern>/static*</pattern>
+        
+    </excludes>
+	<!-- 装饰文件的模板 -->
+    <decorator name="basic-theme" page="default.jsp">
+        <pattern>/</pattern>
+        <pattern>/about</pattern>
+        <pattern>/news</pattern>
+        <pattern>/product</pattern>
+        <pattern>/product/*.html</pattern>
+        <pattern>/cases</pattern>
+    </decorator>
+</decorators>

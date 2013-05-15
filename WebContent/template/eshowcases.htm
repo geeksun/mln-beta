@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Lankecms_etitle}</title>
+<meta name="keywords" content="{Lankecms_ekeyword}" />
+<meta name="description" content="{Lankecms_edescription}" />
+<link rel="stylesheet" type="text/css" href="../template/maoyi-110118-a29/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/lrtk.css" />
+<script type="text/javascript" language="javascript" src="../js/pptBox.js"></script>
+</head>
+<!--  页面头部【end】 -->
+<body class="body1">
+<div id="getValues" style="display:none;"></div>
+<div id="getParams" style="display:none;"></div>
+<div id="top">
+<div id="header">
+    <div id="logo">
+        <div id="MODBLK_222" class="mod_block media_image mb_logo_block">
+            <div class="flash_image">
+            <img src="{root}{Lankecms_logo}"/>
+            </div>
+        </div>
+    </div> 
+<!-- 站点语言模块Start -->
+<div class="switch_langbar">
+</div>
+    <span class="language">
+        Language:
+        <a href="{Lankecms_cnurl}">中文版</a> | 
+        <a href="{Lankecms_enurl}">English</a>
+    </span>
+</div>
+
+   <div id="nav_bg">
+    <div id="nav">
+        <div id="MODBLK_225" class="mod_block mb_56YrvV58_block">
+            <div class="nav_l"></div>
+                <ul id="nav_sWUiiy" class="navigation">
+                {Lankecms_enav}
+                </ul>
+            <div class="nav_r"></div>
+        </div>
+	</div>
+    </div>
+    
+   <div id="banner_bg">
+   <div id="banner">
+    <div id="MODBLK_223" class="mod_block media_image mb_banner_block">
+        <div class="flash_image">
+         <!--焦点广告-->
+         <script>
+         var box =new PPTBox();
+         box.width = 980; //宽度
+         box.height = 336;//高度
+         box.autoplayer = 3;//自动播放间隔时间
+         //box.add({"url":"图片地址","title":"悬浮标题","href":"链接地址"})
+         {Lankecms_adv}
+         box.show();
+        </script>
+        </div>
+    </div>
+	</div> 
+    </div>   
+     </div>
+    <!--top end-->
+ <!--main_div-->
+<div id="main_div">
+  <!--top-->
+<!--mainmain-->
+    <div id="mainmain"> 
+   
+	<div id="main_con" class="web_bg">
+     		<div id="left">
+    <div id="MODBLK_299" class="mod_block mb_fsBdWXpb_block">
+    <h3 class="blk_t">Navigation list</h3>
+<div class="list_main category">
+	<div class="prod_type">
+	<div id="pro_type_HaipIu">
+	 <ul>
+    {Lankecms_eleftnav}
+    <div class="blankbar1"></div>
+	</ul>		
+	</div>
+	</div>
+	<div class="list_bot"></div>
+</div>
+<div class="blankbar"></div>
+</div>
+
+<div id="MODBLK_206" class="mod_block mb_aq4yXYOw_block">
+    <h3 class="blk_t">News center</h3>
+        <div class="qq_list_con">
+            <ul class="titlelist">
+            {Lankecms_enews}
+            </ul>	
+        </div>
+    <div class="list_bot"></div>
+    <div class="blankbar"></div>
+</div>
+
+<div id="MODBLK_206" class="mod_block mb_aq4yXYOw_block">
+    <h3 class="blk_t">Contact us</h3>
+    <div class="qq_list_con">
+        <ul>
+            <li>Add: {Lankecms_edz}</li>  
+            <li>Tel: {Lankecms_tel}</li> 
+            <li>Fax: {Lankecms_fax}</li>
+            <li>Email: {Lankecms_email}</li> 
+        </ul>
+    </div>
+    <div class="list_bot"></div>
+    <div class="blankbar"></div>
+</div>
+</div>
+                    
+        <div id="right">
+        <div id="right2">
+	<div class="artview_title">{Lankecms_etitle}</div>
+	<div id="artview_content">{Lankecms_ebody}</div>
+	<div class="blankbar1"></div>
+</div>		</div>
+        </div>
+		       
+        <div class="blankbar"></div>
+	</div>
+</div>
+ <!--mainmain end-->   
+</div>
+<!--main_div end--> 
+
+<div id="footer">
+    <div class="copyright">
+    &nbsp;&nbsp;{Lankecms_ecopyright}&nbsp;{Lankecms_beian} <a href="{root}/sitemap.html" target="_blank">Sitemap</a>
+    </div>
+</div>
+{eqq}
+{Lankecms_eshare}
+</body>
+</html>

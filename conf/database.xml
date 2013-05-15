@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="true">
+    <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+	   <property name="driverClass" value="com.mysql.jdbc.Driver" />
+	   <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mln?useUnicode=true&amp;characterEncoding=utf-8" />
+	   <property name="username" value="root"/>
+	   <property name="password" value="test"/>
+	   <property name="idleConnectionTestPeriod" value="60"/>
+	   <property name="idleMaxAge" value="240"/>
+	   <property name="minConnectionsPerPartition" value="10"/>
+	   <property name="maxConnectionsPerPartition" value="30"/>
+	   <property name="partitionCount" value="3"/>
+	   <property name="acquireIncrement" value="5"/>
+	   <property name="statementCacheSize" value="100"/>
+	   <property name="releaseHelperThreads" value="3"/>
+	</bean>
+    <bean id="transactionManager" 
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="transactionInterceptor"  class="org.springframework.transaction.interceptor.TransactionInterceptor">
+       <property name="transactionManager">
+           <ref local="transactionManager" />
+       </property>
+       <property name="transactionAttributes">
+           <props>
+              <prop key="insert*">PROPAGATION_REQUIRED</prop>
+              <!-- LogAspectj中的AOP日志方法 -->
+              <prop key="login*">PROPAGATION_REQUIRED</prop>
+	    	  <prop key="update*">PROPAGATION_REQUIRED</prop>
+	    	  <!-- 发送邮件 -->
+	    	  <prop key="send*">PROPAGATION_REQUIRED</prop>
+	    	  <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+	    	  <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+	    	  <prop key="delete*">PROPAGATION_REQUIRED</prop>
+	    	  <prop key="*">PROPAGATION_REQUIRED,readOnly,-Exception</prop>	
+           </props>
+       </property>
+    </bean>
+    <!-- 定义 BeanPostProcessor bean,Spring 提供实现类 BeanNameAutoProxyCreator -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<value>*Dao,*Service</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+    </bean>
+
+</beans>

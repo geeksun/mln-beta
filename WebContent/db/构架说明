@@ -1,0 +1,20 @@
+静态文件后缀为.htm
+动态文件后缀为/，产品内容页为.html
+
+目前使用 spring mvc 做RESTFul url解析映射，连接池用BoneCP，数据库管理类用DBUtils.
+
+
+性能优化：
+1. 前台变动不大的页面使用htm静态文件；
+2. 使用BoneCP连接池（高效）和DBUtils数据库管理方案（高效，同JDBC）。
+3. 缓存（尚未使用）
+
+
+存在问题：
+1. 访问DAO时，在controller中直接用DBHandler的方法，可跳过service和dao。
+2. 未使用spring的事务管理
+
+
+可改进的地方：
+在Controller中可减少查询条件
+在多任务时可使用多线程：如发布信息时，同时生成静态页和插入数据库
