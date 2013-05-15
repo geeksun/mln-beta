@@ -1,6 +1,10 @@
 package com.mln.util;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
 
 /**
  * Description 字符串工具类
@@ -55,6 +59,21 @@ public class StringUtil {
 	 */
 	public static final String simpleName(Object obj){
 		return obj.getClass().getSimpleName();
+	}
+	
+	/**
+	 * 生成静态文件
+	 */
+	public static void generateHtml(String filePath, String content){
+		FileOutputStream fileoutputstream;
+		try {
+			fileoutputstream = new FileOutputStream(filePath);				// 建立文档输出流
+			byte tag_bytes[] = content.getBytes();
+			fileoutputstream.write(tag_bytes);
+			fileoutputstream.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}				
 	}
 
 }
