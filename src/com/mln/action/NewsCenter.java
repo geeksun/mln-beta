@@ -55,7 +55,7 @@ public class NewsCenter {
 			int pageNum = Integer.parseInt(jumpPage);
 			
 			String count_sql = "select count(1) from news";
-			String data_sql = "select id id,title title,summary summary,content content,category_no categoryNo,time time from news";
+			String data_sql = "select id id,title title,time time from news";
 			if(!StringUtil.isEmpty(num)){
 				count_sql += " where category_No = ?";
 				int totalRows = DBHandler.stat(count_sql, num);
@@ -92,7 +92,6 @@ public class NewsCenter {
 	/**
 	 * News description page made pseudo-static pages, in order to facilitate SEO 
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value="{id}.html")
 	public String info(@PathVariable Integer id, Model model, HttpServletRequest request){
 		String sql = "select id id,title title,summary summary,content content,category_no categoryNo,time time from news";
