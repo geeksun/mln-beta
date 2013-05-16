@@ -12,7 +12,7 @@
 <div id="main_con" class="web_bg">
     <div id="left">
     <%@include file="/WEB-INF/jsp/menu/product-menu.jsp"  %>
-    <%@include file="../../../../html/news-menu.htm"  %>
+    <%@include file="/WEB-INF/jsp/menu/news-menu.jsp"  %>
 	<%@include file="../../../../html/contact-menu.htm"  %>
     </div>
 

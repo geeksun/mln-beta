@@ -18,11 +18,11 @@
 <td height="50" valign="middle" bgcolor="#FFFFFF">
 <p>
 <c:choose>
-<c:when test="${id eq 1}"><input type="button" name="Submit" value="开始生成产品分类页" onClick="window.location.href='/static/html/productCategory' "/>
+<c:when test="${id eq 1}"><input type="button" value="开始生成产品分类页" onClick="window.location.href='/static/html/productCategory'"/>
 </c:when>
 </c:choose>
 <c:choose>
-<c:when test="${id eq 2}"><input type="button" name="Submit" value="开始生成新闻菜单页" onClick="window.location.href='index_html.asp' "/>
+<c:when test="${id eq 2}"><input type="button" value="开始生成新闻菜单页" onClick="window.location.href='/static/html/newsMenu'"/>
 </c:when>
 </c:choose>
 

@@ -14,7 +14,7 @@
 <!-- left menu -->
 <div id="left">
 <%@include file="/html/cases-menu.htm"  %>
-<%@include file="/html/news-menu.htm"  %>
+<%@include file="/WEB-INF/jsp/menu/news-menu.jsp"  %>
 <%@include file="/html/contact-menu.htm"  %>
 </div>    
     
